@@ -69,10 +69,12 @@ public class P1Movement : MonoBehaviour
         p1rb.linearVelocity = vel;
         
         RaycastHit2D hit = Physics2D.Raycast(transform.position, vel.normalized, 6.5f);
-        
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
-        flashlight.localRotation  = quaternion.Euler(0, 0, angle);
+        Debug.DrawRay(transform.position, vel.normalized * 6.5f, Color.red);
+        flashlight.up = vel.normalized;
 
+        //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 45f;
+        //flashlight.localRotation  = Quaternion.Euler(0, 0, angle);
+        //Debug.DrawRay(flashlight.position, flashlight.localRotation.eulerAngles, Color.green);
     }
 
 }
