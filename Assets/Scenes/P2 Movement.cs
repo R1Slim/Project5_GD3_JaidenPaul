@@ -1,5 +1,6 @@
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class P2Movement : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class P2Movement : MonoBehaviour
     public float smoothness = 0.0025f;
     public float speed = 5f;
     public Vector2 desired;
+  
     
 
 
@@ -62,9 +64,18 @@ public class P2Movement : MonoBehaviour
         Vector2 direction = desired.normalized;
         Vector2 vel = Vector2.Lerp(p2rb.linearVelocity, desired, smoothness);
         p2rb.linearVelocity = vel;
+        
+        //Vector3 directionangle = new Vector3 (Quaternion.AngleAxis(45f, flashlight2.up));
+        
         RaycastHit2D hit = Physics2D.Raycast(transform.position, vel.normalized, 6.5f);
+        RaycastHit2D HitAngle = Physics2D.Raycast(transform.position, vel.normalized, 6.5f);
+
+
         Debug.DrawRay(transform.position, vel.normalized * 6.5f, Color.red);
+        Debug.DrawRay(transform.position, vel.normalized * 6.5f, Color.red);
+        Debug.Log(Quaternion.AngleAxis(45f, flashlight2.up));
         flashlight2.up = vel.normalized;
+
      
          
     
