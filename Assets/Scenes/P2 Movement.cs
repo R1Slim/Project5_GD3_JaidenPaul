@@ -1,6 +1,12 @@
+using System.Numerics;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
+using static UnityEditor.Experimental.GraphView.GraphView;
+using Quaternion = UnityEngine.Quaternion;
+using Vector2 = UnityEngine.Vector2;
+using Vector3 = UnityEngine.Vector3;
 
 public class P2Movement : MonoBehaviour
 {
@@ -11,8 +17,11 @@ public class P2Movement : MonoBehaviour
     public float smoothness = 0.0025f;
     public float speed = 5f;
     public Vector2 desired;
-  
     
+    public float radius = 6.5f;
+
+    public bool LightsOn;
+    P1Movement Player1;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -27,6 +36,7 @@ public class P2Movement : MonoBehaviour
     void Update()
     {
         EasedDirection();
+        RaycastAngle(transform.position, p2rb.linearVelocity);
     }
     void EasedDirection()
     {
@@ -64,18 +74,47 @@ public class P2Movement : MonoBehaviour
         Vector2 direction = desired.normalized;
         Vector2 vel = Vector2.Lerp(p2rb.linearVelocity, desired, smoothness);
         p2rb.linearVelocity = vel;
-        
+
         //Vector3 directionangle = new Vector3 (Quaternion.AngleAxis(45f, flashlight2.up));
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, vel.normalized, radius);
         
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, vel.normalized, 6.5f);
-        RaycastHit2D HitAngle = Physics2D.Raycast(transform.position, vel.normalized, 6.5f);
 
 
-        Debug.DrawRay(transform.position, vel.normalized * 6.5f, Color.red);
-        Debug.DrawRay(transform.position, vel.normalized * 6.5f, Color.red);
+        Debug.DrawRay(transform.position, vel.normalized * radius, Color.red);
+        
         Debug.Log(Quaternion.AngleAxis(45f, flashlight2.up));
         flashlight2.up = vel.normalized;
+    }
+    public void RaycastAngle(Vector2 Playerpt, Vector2 PlayerDirection)
+    {
+        float angle45 = ((2 * radius) * Mathf.PI) * (45 / 360);
+        //Quaternion rotation = Quaternion.AngleAxis(angle45, new Vector3(0,0,PlayerDirection));
+        Vector3 angle1 = Quaternion.Euler(0, 0, 13.75f) * PlayerDirection;
+        Vector3 angle2 = Quaternion.Euler(0, 0, -13.75f) * PlayerDirection;
+        Vector3 angle3 = Quaternion.Euler(0, 0, 6.875f) * PlayerDirection;
+        Vector3 angle4 = Quaternion.Euler(0, 0, -6.875f) * PlayerDirection;
+        RaycastHit2D hitangle1 = Physics2D.Raycast(transform.position, angle1.normalized, radius);
+        RaycastHit2D hitangle2 = Physics2D.Raycast(transform.position, angle2.normalized, radius);
+        RaycastHit2D hitangle3 = Physics2D.Raycast(transform.position, angle3.normalized, radius);
+        RaycastHit2D hitangle4 = Physics2D.Raycast(transform.position, angle4.normalized, radius);
 
+        
+        Debug.DrawRay(transform.position, angle1.normalized * radius, Color.green);
+        Debug.DrawRay(transform.position, angle2.normalized * radius, Color.green);
+        Debug.DrawRay(transform.position, angle3.normalized * radius, Color.green);
+        Debug.DrawRay(transform.position, angle4.normalized * radius, Color.green);
+
+        if (hitangle1 || hitangle2 || hitangle3 || hitangle4 != Player1.gameObject)
+        {
+            return;
+        }
+        else
+        {
+            LightsOn = true;
+        }
+
+    } 
      
          
     
@@ -84,6 +123,6 @@ public class P2Movement : MonoBehaviour
 
         //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
         //flashlight2.localRotation = quaternion.Euler(0, 0, angle);
-    }
-
 }
+
+
