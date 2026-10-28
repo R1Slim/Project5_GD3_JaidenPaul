@@ -17,7 +17,7 @@ public class P2Movement : MonoBehaviour
     public float smoothness = 0.0025f;
     public float speed = 5f;
     public Vector2 desired;
-    
+    public static P2Movement _instance;
     public float radius = 6.5f;
 
     public bool LightsOn;
@@ -25,6 +25,10 @@ public class P2Movement : MonoBehaviour
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Awake()
+    {
+        _instance = this;
+    }
     void Start()
     {
         p2col = GetComponent<BoxCollider2D>();
@@ -83,7 +87,7 @@ public class P2Movement : MonoBehaviour
 
         Debug.DrawRay(transform.position, vel.normalized * radius, Color.red);
         
-        Debug.Log(Quaternion.AngleAxis(45f, flashlight2.up));
+       
         flashlight2.up = vel.normalized;
     }
     public void RaycastAngle(Vector2 Playerpt, Vector2 PlayerDirection)

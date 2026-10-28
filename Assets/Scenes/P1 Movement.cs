@@ -79,33 +79,69 @@ public class P1Movement : MonoBehaviour
     {
         float angle45 = ((2 * radius) * Mathf.PI) * (45 / 360);
         //Quaternion rotation = Quaternion.AngleAxis(angle45, new Vector3(0,0,PlayerDirection));
-        Vector3 angle1 = Quaternion.Euler(0, 0, 13.75f) * PlayerDirection;
-        Vector3 angle2 = Quaternion.Euler(0, 0, -13.75f) * PlayerDirection;
-        Vector3 angle3 = Quaternion.Euler(0, 0, 6.875f) * PlayerDirection;
-        Vector3 angle4 = Quaternion.Euler(0, 0, -6.875f) * PlayerDirection;
-        RaycastHit2D hitangle1 = Physics2D.Raycast(transform.position, angle1.normalized, radius, 7);
-        RaycastHit2D hitangle2 = Physics2D.Raycast(transform.position, angle2.normalized, radius, 7);
-        RaycastHit2D hitangle3 = Physics2D.Raycast(transform.position, angle3.normalized, radius, 7);
-        RaycastHit2D hitangle4 = Physics2D.Raycast(transform.position, angle4.normalized, radius, 7);
-
-        Debug.Log(hitangle1 + "hit");
-
-
-        Debug.DrawRay(transform.position, angle1.normalized * radius, Color.green);
-        Debug.DrawRay(transform.position, angle2.normalized * radius, Color.green);
-        Debug.DrawRay(transform.position, angle3.normalized * radius, Color.green);
-        Debug.DrawRay(transform.position, angle4.normalized * radius, Color.green);
-
-        if (hitangle1 || hitangle2 || hitangle3 || hitangle4 != Player2.gameObject)
+        for(int i = 0; i < 2; i++)
         {
-            return;
+            Vector3 angle = Quaternion.Euler(0, 0, 6.875f * (i + 1)) * PlayerDirection;
+            RaycastHit2D hitinfo = Physics2D.Raycast(transform.position, angle.normalized, radius, 7);
+            Debug.DrawRay(transform.position, angle.normalized * radius, Color.purple);
+            if (hitinfo)
+            {
+
+                Debug.Log(hitinfo.collider.gameObject);
+                if (hitinfo.collider.gameObject == Player2.gameObject)
+                {
+                    LightsOn = true;
+                }
+                
+            }
         }
-        else
+        for(int i = 0; i < 2; i++)
         {
-            LightsOn = true;
+            Vector3 angle = Quaternion.Euler(0, 0, -6.875f * (i + 1)) * PlayerDirection;
+            RaycastHit2D hitinfo = Physics2D.Raycast(transform.position, angle.normalized, radius, 7);
+            Debug.DrawRay(transform.position, angle.normalized * radius, Color.purple);
+            if (hitinfo)
+            {
+
+                Debug.Log(hitinfo.collider.gameObject);
+                if (hitinfo.collider.gameObject == Player2.gameObject)
+                {
+                    LightsOn = true;
+                }
+
+            }
         }
-           
-    
+        if (LightsOn)
+        {
+            Debug.Log("Lights on");
+        }
+
+        //Vector3 angle1 = Quaternion.Euler(0, 0, 13.75f) * PlayerDirection;
+        //Vector3 angle2 = Quaternion.Euler(0, 0, -13.75f) * PlayerDirection;
+        //Vector3 angle3 = Quaternion.Euler(0, 0, 6.875f) * PlayerDirection;
+        //Vector3 angle4 = Quaternion.Euler(0, 0, -6.875f) * PlayerDirection;
+        //RaycastHit2D hitangle1 = Physics2D.Raycast(transform.position, angle1.normalized, radius, 7);
+        //RaycastHit2D hitangle2 = Physics2D.Raycast(transform.position, angle2.normalized, radius, 7);
+        //RaycastHit2D hitangle3 = Physics2D.Raycast(transform.position, angle3.normalized, radius, 7);
+        //RaycastHit2D hitangle4 = Physics2D.Raycast(transform.position, angle4.normalized, radius, 7);
+        //Debug.Log(hitangle1 + "hit" + hitangle1.collider.gameObject);
+
+
+        //Debug.DrawRay(transform.position, angle1.normalized * radius, Color.green);
+        //Debug.DrawRay(transform.position, angle2.normalized * radius, Color.green);
+        //Debug.DrawRay(transform.position, angle3.normalized * radius, Color.green);
+        //Debug.DrawRay(transform.position, angle4.normalized * radius, Color.green);
+
+        //if (hitangle1.collider == null || hitangle2.collider == null || hitangle3.collider == null || hitangle4.collider == null || hitangle1.collider.gameObject != Player2.gameObject)
+        //{
+        //    return;
+        //}
+        //else
+        //{
+        //    LightsOn = true;
+        //}
+
+
     }
     
     //public IEnumerator Lightsnbullets()
