@@ -29,6 +29,20 @@ public class Gamemanager : MonoBehaviour
         //}
         //if (Shootout)
         //{
-        //    if (Player1.LightsOn
+        //   Timer -= Time.deltaTime;
+        //  if(Input.GetKeyDown(KeyCode.LeftShift)
+        //  {
+        //    shootbulletsp1();
+        //  }
+        // if (Input.GetKeyDown(KeyCode.Enter)){
+        //    shootbulletsp2();}
+        //}
+
+        //public void shootbulletsp1()
+        //{
+        //   instantiate(bullet, transform.position, Quaternion.identity);
+        //   
+        //}
+
     }
 }

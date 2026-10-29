@@ -17,8 +17,9 @@ public class P1Movement : MonoBehaviour
     public bool isfacingright;
     public float radius = 6.5f;
     public bool LightsOn;
-    P2Movement Player2;
+    public P2Movement Player2;
 
+    public LayerMask mask;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -82,7 +83,7 @@ public class P1Movement : MonoBehaviour
         for(int i = 0; i < 2; i++)
         {
             Vector3 angle = Quaternion.Euler(0, 0, 6.875f * (i + 1)) * PlayerDirection;
-            RaycastHit2D hitinfo = Physics2D.Raycast(transform.position, angle.normalized, radius, 7);
+            RaycastHit2D hitinfo = Physics2D.Raycast(transform.position, angle.normalized, radius, mask);
             Debug.DrawRay(transform.position, angle.normalized * radius, Color.purple);
             if (hitinfo)
             {
@@ -98,7 +99,7 @@ public class P1Movement : MonoBehaviour
         for(int i = 0; i < 2; i++)
         {
             Vector3 angle = Quaternion.Euler(0, 0, -6.875f * (i + 1)) * PlayerDirection;
-            RaycastHit2D hitinfo = Physics2D.Raycast(transform.position, angle.normalized, radius, 7);
+            RaycastHit2D hitinfo = Physics2D.Raycast(transform.position, angle.normalized, radius, maskf);
             Debug.DrawRay(transform.position, angle.normalized * radius, Color.purple);
             if (hitinfo)
             {

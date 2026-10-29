@@ -48,25 +48,25 @@ public class P2Movement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            Debug.Log("up");
+            //Debug.Log("up");
             desired.y = speed;
 
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            Debug.Log("down");
+            //Debug.Log("down");
             desired.y = -speed;
 
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            Debug.Log("Right");
+            //Debug.Log("Right");
             desired.x = speed;
 
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            Debug.Log("left");
+            //Debug.Log("left");
 
             desired.x = -speed;
         }
