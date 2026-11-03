@@ -1,2 +1,17 @@
 fileFormatVersion: 2
 guid: 92208843d359d974cb6fd99a8c155346
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - p1rb: {instanceID: 0}
+  - p1sr: {instanceID: 0}
+  - p1col: {instanceID: 0}
+  - flashlight: {instanceID: 0}
+  - P2: {fileID: 19543246393823025, guid: 1b3a62d5f0064a344a17842f8a4fe806, type: 3}
+  - Player2: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

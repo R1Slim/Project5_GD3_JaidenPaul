@@ -570,6 +570,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 19543246393823025, guid: 1b3a62d5f0064a344a17842f8a4fe806, type: 3}
+      propertyPath: m_TagString
+      value: P2
+      objectReference: {fileID: 0}
     - target: {fileID: 1299840295694566832, guid: 1b3a62d5f0064a344a17842f8a4fe806, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
       value: 0.5
@@ -1555,9 +1559,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1296871927}
     - target: {fileID: 2836597504830292658, guid: 4baba78341397eb49907db45de11e01e, type: 3}
+      propertyPath: Player2
+      value: 
+      objectReference: {fileID: -1820375033676792628, guid: 1b3a62d5f0064a344a17842f8a4fe806, type: 3}
+    - target: {fileID: 2836597504830292658, guid: 4baba78341397eb49907db45de11e01e, type: 3}
+      propertyPath: LightsOn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2836597504830292658, guid: 4baba78341397eb49907db45de11e01e, type: 3}
       propertyPath: flashlight
       value: 
       objectReference: {fileID: 900218238}
+    - target: {fileID: 2836597504830292658, guid: 4baba78341397eb49907db45de11e01e, type: 3}
+      propertyPath: mask.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 5502081210111904664, guid: 4baba78341397eb49907db45de11e01e, type: 3}
       propertyPath: m_Name
       value: P1
@@ -1565,6 +1581,10 @@ PrefabInstance:
     - target: {fileID: 5502081210111904664, guid: 4baba78341397eb49907db45de11e01e, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5502081210111904664, guid: 4baba78341397eb49907db45de11e01e, type: 3}
+      propertyPath: m_TagString
+      value: P1
       objectReference: {fileID: 0}
     - target: {fileID: 8531309372249729052, guid: 4baba78341397eb49907db45de11e01e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1881,6 +1901,38 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4dce62542aab7a439d9616ace3a1988, type: 3}
+--- !u!1 &1682614626 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5502081210111904664, guid: 4baba78341397eb49907db45de11e01e, type: 3}
+  m_PrefabInstance: {fileID: 1296871922}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1682614628 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2836597504830292658, guid: 4baba78341397eb49907db45de11e01e, type: 3}
+  m_PrefabInstance: {fileID: 1296871922}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682614626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92208843d359d974cb6fd99a8c155346, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::P1Movement
+--- !u!1 &1819876516 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 19543246393823025, guid: 1b3a62d5f0064a344a17842f8a4fe806, type: 3}
+  m_PrefabInstance: {fileID: 308325504}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1819876519 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -1820375033676792628, guid: 1b3a62d5f0064a344a17842f8a4fe806, type: 3}
+  m_PrefabInstance: {fileID: 308325504}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819876516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e42a45652057a4e44857b95998bb1efe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::P2Movement
 --- !u!1001 &1928129511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2195,6 +2247,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3230101204290384424, guid: 2dd70ca3b55714e4a95fd991653859a8, type: 3}
+      propertyPath: m_Intensity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3841495498667774775, guid: 2dd70ca3b55714e4a95fd991653859a8, type: 3}
       propertyPath: m_Name
       value: Global Light 2D
@@ -2385,6 +2441,26 @@ PrefabInstance:
     - target: {fileID: 3660556435516712365, guid: 14f746d7aba60b648bec75e1f662a53a, type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695862120771388293, guid: 14f746d7aba60b648bec75e1f662a53a, type: 3}
+      propertyPath: P1GO
+      value: 
+      objectReference: {fileID: 1682614626}
+    - target: {fileID: 6695862120771388293, guid: 14f746d7aba60b648bec75e1f662a53a, type: 3}
+      propertyPath: P2GO
+      value: 
+      objectReference: {fileID: 1819876516}
+    - target: {fileID: 6695862120771388293, guid: 14f746d7aba60b648bec75e1f662a53a, type: 3}
+      propertyPath: Player1
+      value: 
+      objectReference: {fileID: 1682614628}
+    - target: {fileID: 6695862120771388293, guid: 14f746d7aba60b648bec75e1f662a53a, type: 3}
+      propertyPath: Player2
+      value: 
+      objectReference: {fileID: 1819876519}
+    - target: {fileID: 6695862120771388293, guid: 14f746d7aba60b648bec75e1f662a53a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6695862120771388293, guid: 14f746d7aba60b648bec75e1f662a53a, type: 3}
       propertyPath: GlobalLight

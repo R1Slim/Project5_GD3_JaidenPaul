@@ -18,9 +18,16 @@ public class P1Movement : MonoBehaviour
     public float radius = 6.5f;
     public bool LightsOn;
     public P2Movement Player2;
+    
+    public static P1Movement _instance;
 
     public LayerMask mask;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Awake()
+    {
+        _instance = this;
+    }
+
     void Start()
     {
         p1col = GetComponent<BoxCollider2D>();
@@ -89,23 +96,25 @@ public class P1Movement : MonoBehaviour
             {
 
                 Debug.Log(hitinfo.collider.gameObject);
-                if (hitinfo.collider.gameObject == Player2.gameObject)
+                if (hitinfo.collider.tag == "P2")
                 {
                     LightsOn = true;
                 }
-                
+
             }
+            
         }
         for(int i = 0; i < 2; i++)
         {
             Vector3 angle = Quaternion.Euler(0, 0, -6.875f * (i + 1)) * PlayerDirection;
-            RaycastHit2D hitinfo = Physics2D.Raycast(transform.position, angle.normalized, radius, maskf);
+            RaycastHit2D hitinfo = Physics2D.Raycast(transform.position, angle.normalized, radius, mask);
             Debug.DrawRay(transform.position, angle.normalized * radius, Color.purple);
             if (hitinfo)
             {
 
                 Debug.Log(hitinfo.collider.gameObject);
-                if (hitinfo.collider.gameObject == Player2.gameObject)
+
+                if (hitinfo.collider.tag == "P2")
                 {
                     LightsOn = true;
                 }
