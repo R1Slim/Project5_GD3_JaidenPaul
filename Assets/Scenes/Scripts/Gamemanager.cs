@@ -25,6 +25,11 @@ public class Gamemanager : MonoBehaviour
             GlobalLight.intensity = 1f;
             Shootout = true;
         }
+        if (Player1.LightsOn == false && Player2.LightsOn == false)
+        {
+            GlobalLight.intensity = 0.5f;
+            Shootout = false;
+        }
         //if (Shootout)
         //{
         //    Timer -= Time.deltaTime;

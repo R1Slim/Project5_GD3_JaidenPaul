@@ -126,41 +126,10 @@ public class P1Movement : MonoBehaviour
             Debug.Log("Lights on");
         }
 
-        //Vector3 angle1 = Quaternion.Euler(0, 0, 13.75f) * PlayerDirection;
-        //Vector3 angle2 = Quaternion.Euler(0, 0, -13.75f) * PlayerDirection;
-        //Vector3 angle3 = Quaternion.Euler(0, 0, 6.875f) * PlayerDirection;
-        //Vector3 angle4 = Quaternion.Euler(0, 0, -6.875f) * PlayerDirection;
-        //RaycastHit2D hitangle1 = Physics2D.Raycast(transform.position, angle1.normalized, radius, 7);
-        //RaycastHit2D hitangle2 = Physics2D.Raycast(transform.position, angle2.normalized, radius, 7);
-        //RaycastHit2D hitangle3 = Physics2D.Raycast(transform.position, angle3.normalized, radius, 7);
-        //RaycastHit2D hitangle4 = Physics2D.Raycast(transform.position, angle4.normalized, radius, 7);
-        //Debug.Log(hitangle1 + "hit" + hitangle1.collider.gameObject);
-
-
-        //Debug.DrawRay(transform.position, angle1.normalized * radius, Color.green);
-        //Debug.DrawRay(transform.position, angle2.normalized * radius, Color.green);
-        //Debug.DrawRay(transform.position, angle3.normalized * radius, Color.green);
-        //Debug.DrawRay(transform.position, angle4.normalized * radius, Color.green);
-
-        //if (hitangle1.collider == null || hitangle2.collider == null || hitangle3.collider == null || hitangle4.collider == null || hitangle1.collider.gameObject != Player2.gameObject)
-        //{
-        //    return;
-        //}
-        //else
-        //{
-        //    LightsOn = true;
-        //}
-
 
     }
     
-    //public IEnumerator Lightsnbullets()
-    //{
 
-    //}
-    //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 45f;
-    //flashlight.localRotation  = Quaternion.Euler(0, 0, angle);
-    //Debug.DrawRay(flashlight.position, flashlight.localRotation.eulerAngles, Color.green);
 }
 
 

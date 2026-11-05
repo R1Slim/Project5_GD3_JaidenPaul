@@ -559,6 +559,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -1820375033676792628, guid: 1b3a62d5f0064a344a17842f8a4fe806, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1820375033676792628, guid: 1b3a62d5f0064a344a17842f8a4fe806, type: 3}
       propertyPath: flashlight2
       value: 
       objectReference: {fileID: 1283578390}
@@ -631,7 +635,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4434872126700933038, guid: 1b3a62d5f0064a344a17842f8a4fe806, type: 3}
       insertIndex: -1
       addedObject: {fileID: 42285859}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 19543246393823025, guid: 1b3a62d5f0064a344a17842f8a4fe806, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1819876523}
   m_SourcePrefab: {fileID: 100100000, guid: 1b3a62d5f0064a344a17842f8a4fe806, type: 3}
 --- !u!1001 &309986584
 PrefabInstance:
@@ -1553,26 +1560,34 @@ PrefabInstance:
     - target: {fileID: 2836597504830292658, guid: 4baba78341397eb49907db45de11e01e, type: 3}
       propertyPath: p1rb
       value: 
-      objectReference: {fileID: 1296871925}
+      objectReference: {fileID: 0}
     - target: {fileID: 2836597504830292658, guid: 4baba78341397eb49907db45de11e01e, type: 3}
       propertyPath: p1sr
       value: 
-      objectReference: {fileID: 1296871927}
+      objectReference: {fileID: 0}
+    - target: {fileID: 2836597504830292658, guid: 4baba78341397eb49907db45de11e01e, type: 3}
+      propertyPath: p1col
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2836597504830292658, guid: 4baba78341397eb49907db45de11e01e, type: 3}
       propertyPath: Player2
       value: 
-      objectReference: {fileID: -1820375033676792628, guid: 1b3a62d5f0064a344a17842f8a4fe806, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2836597504830292658, guid: 4baba78341397eb49907db45de11e01e, type: 3}
       propertyPath: LightsOn
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2836597504830292658, guid: 4baba78341397eb49907db45de11e01e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2836597504830292658, guid: 4baba78341397eb49907db45de11e01e, type: 3}
       propertyPath: flashlight
       value: 
-      objectReference: {fileID: 900218238}
+      objectReference: {fileID: 0}
     - target: {fileID: 2836597504830292658, guid: 4baba78341397eb49907db45de11e01e, type: 3}
       propertyPath: mask.m_Bits
-      value: 128
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5502081210111904664, guid: 4baba78341397eb49907db45de11e01e, type: 3}
       propertyPath: m_Name
@@ -1635,7 +1650,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8531309372249729052, guid: 4baba78341397eb49907db45de11e01e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2030094440}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5502081210111904664, guid: 4baba78341397eb49907db45de11e01e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1682614630}
   m_SourcePrefab: {fileID: 100100000, guid: 4baba78341397eb49907db45de11e01e, type: 3}
 --- !u!50 &1296871925 stripped
 Rigidbody2D:
@@ -1912,11 +1930,42 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1296871922}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1682614626}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92208843d359d974cb6fd99a8c155346, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::P1Movement
+--- !u!61 &1682614629 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 8693469286649292632, guid: 4baba78341397eb49907db45de11e01e, type: 3}
+  m_PrefabInstance: {fileID: 1296871922}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1682614630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682614626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e40c9e49a772c4e8dfc302cbf16c63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  PlayerRb: {fileID: 1296871925}
+  PlayerSr: {fileID: 1296871927}
+  PlayerCol: {fileID: 1682614629}
+  flashlight: {fileID: 1489598837}
+  smoothness: 0.075
+  speed: 5
+  desired: {x: 0, y: 0}
+  isfacingright: 0
+  radius: 6.5
+  LightsOn: 0
+  Player2: {fileID: 0}
+  mask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &1819876516 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 19543246393823025, guid: 1b3a62d5f0064a344a17842f8a4fe806, type: 3}
@@ -1928,11 +1977,52 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 308325504}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1819876516}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e42a45652057a4e44857b95998bb1efe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::P2Movement
+--- !u!61 &1819876520 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: -7495667166958028933, guid: 1b3a62d5f0064a344a17842f8a4fe806, type: 3}
+  m_PrefabInstance: {fileID: 308325504}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1819876521 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7194463449726641007, guid: 1b3a62d5f0064a344a17842f8a4fe806, type: 3}
+  m_PrefabInstance: {fileID: 308325504}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1819876522 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: -3005551643261910199, guid: 1b3a62d5f0064a344a17842f8a4fe806, type: 3}
+  m_PrefabInstance: {fileID: 308325504}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1819876523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819876516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e40c9e49a772c4e8dfc302cbf16c63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  PlayerRb: {fileID: 1819876522}
+  PlayerSr: {fileID: 1819876521}
+  PlayerCol: {fileID: 1819876520}
+  flashlight: {fileID: 1369244908}
+  smoothness: 0.075
+  speed: 5
+  desired: {x: 0, y: 0}
+  isfacingright: 0
+  radius: 6.5
+  LightsOn: 0
+  Player2: {fileID: 0}
+  mask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1001 &1928129511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2245,10 +2335,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 41751451777290609, guid: 2dd70ca3b55714e4a95fd991653859a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3230101204290384424, guid: 2dd70ca3b55714e4a95fd991653859a8, type: 3}
-      propertyPath: m_Intensity
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3841495498667774775, guid: 2dd70ca3b55714e4a95fd991653859a8, type: 3}

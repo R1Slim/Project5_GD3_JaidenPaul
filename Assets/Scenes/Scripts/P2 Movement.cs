@@ -119,7 +119,6 @@ public class P2Movement : MonoBehaviour
         }
 
     } 
-     
          
     
        
@@ -128,5 +127,6 @@ public class P2Movement : MonoBehaviour
         //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
         //flashlight2.localRotation = quaternion.Euler(0, 0, angle);
 }
+     
 
 
