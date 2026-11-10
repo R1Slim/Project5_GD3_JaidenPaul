@@ -1962,7 +1962,11 @@ MonoBehaviour:
   isfacingright: 0
   radius: 6.5
   LightsOn: 0
-  Player2: {fileID: 0}
+  Player2: {fileID: 1819876519}
+  GM: {fileID: 0}
+  bullet: {fileID: 0}
+  PlayerTransform: {fileID: 0}
+  bulletSpeed: 10
   mask:
     serializedVersion: 2
     m_Bits: 128
@@ -2020,6 +2024,10 @@ MonoBehaviour:
   radius: 6.5
   LightsOn: 0
   Player2: {fileID: 0}
+  GM: {fileID: 0}
+  bullet: {fileID: 0}
+  PlayerTransform: {fileID: 0}
+  bulletSpeed: 10
   mask:
     serializedVersion: 2
     m_Bits: 64
@@ -2552,13 +2560,17 @@ PrefabInstance:
       propertyPath: GlobalLight
       value: 
       objectReference: {fileID: 619394801}
+    - target: {fileID: 6695862120771388293, guid: 14f746d7aba60b648bec75e1f662a53a, type: 3}
+      propertyPath: playermovement
+      value: 
+      objectReference: {fileID: 1682614630}
     - target: {fileID: 9098014673847470737, guid: 14f746d7aba60b648bec75e1f662a53a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.8989
+      value: 6.29
       objectReference: {fileID: 0}
     - target: {fileID: 9098014673847470737, guid: 14f746d7aba60b648bec75e1f662a53a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.2478
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 9098014673847470737, guid: 14f746d7aba60b648bec75e1f662a53a, type: 3}
       propertyPath: m_LocalPosition.z

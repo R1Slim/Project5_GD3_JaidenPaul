@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.InputSystem.Android;
 using UnityEngine.Rendering.Universal;
@@ -8,10 +9,12 @@ public class Gamemanager : MonoBehaviour
     public P2Movement Player2;
     public Light2D GlobalLight;
     public float Timer = 5f;
-   
+    public PlayerMovement playermovement;
     public bool Shootout;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
 
@@ -20,16 +23,21 @@ public class Gamemanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Player1.LightsOn == true || Player2.LightsOn == true)
+       
+        if (playermovement.LightsOn != true)
+        {
+            GlobalLight.intensity = 0f;
+            Shootout = false;
+        }
+        else
         {
             GlobalLight.intensity = 1f;
             Shootout = true;
         }
-        if (Player1.LightsOn == false && Player2.LightsOn == false)
-        {
-            GlobalLight.intensity = 0.5f;
-            Shootout = false;
-        }
+       
+        
+
+
         //if (Shootout)
         //{
         //    Timer -= Time.deltaTime;
@@ -50,6 +58,8 @@ public class Gamemanager : MonoBehaviour
         //    Instantiate(bullet, transform.position, Quaternion.identity);
 
     }
+    
+    
 
 }
 

@@ -15,7 +15,10 @@ public class PlayerMovement : MonoBehaviour
     public float radius = 6.5f;
     public bool LightsOn;
     public P2Movement Player2;
-
+    public Gamemanager GM;
+    public GameObject bullet;
+    public Transform PlayerTransform;
+    public float bulletSpeed = 10f;
     public static P1Movement _instance;
 
     public LayerMask mask;
@@ -42,6 +45,11 @@ public class PlayerMovement : MonoBehaviour
         {
             EasedDirectionArrows();
             RaycastAngle(PlayerRb.linearVelocity);
+        }
+        if (GM.Shootout && Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
+        {
+            
+            shoot(transform);
         }
     }
     void EasedDirectionwasd()
@@ -174,7 +182,12 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
-
+    void shoot(Transform PlayerTransform)
+    {
+        GameObject newBullet = Instantiate(bullet, PlayerTransform.position, Quaternion.identity);
+        Rigidbody2D bulletRb = newBullet.GetComponent<Rigidbody2D>();
+        bulletRb.linearVelocity = PlayerTransform.right * bulletSpeed;
+    }
 
 }
     // Update is called once per frame
