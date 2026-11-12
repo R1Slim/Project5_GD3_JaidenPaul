@@ -341,6 +341,30 @@ PrefabInstance:
       propertyPath: m_TagString
       value: P2
       objectReference: {fileID: 0}
+    - target: {fileID: 1157049740172940700, guid: 1b3a62d5f0064a344a17842f8a4fe806, type: 3}
+      propertyPath: GM
+      value: 
+      objectReference: {fileID: 197355185}
+    - target: {fileID: 1157049740172940700, guid: 1b3a62d5f0064a344a17842f8a4fe806, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 1786903419019537929, guid: b14d02cbbcf68af419b5eec8e111fe35, type: 3}
+    - target: {fileID: 1157049740172940700, guid: 1b3a62d5f0064a344a17842f8a4fe806, type: 3}
+      propertyPath: PlayerSr
+      value: 
+      objectReference: {fileID: 1819876521}
+    - target: {fileID: 1157049740172940700, guid: 1b3a62d5f0064a344a17842f8a4fe806, type: 3}
+      propertyPath: PlayerCol
+      value: 
+      objectReference: {fileID: 1819876520}
+    - target: {fileID: 1157049740172940700, guid: 1b3a62d5f0064a344a17842f8a4fe806, type: 3}
+      propertyPath: flashlight
+      value: 
+      objectReference: {fileID: 1369244908}
+    - target: {fileID: 1157049740172940700, guid: 1b3a62d5f0064a344a17842f8a4fe806, type: 3}
+      propertyPath: PlayerTransform
+      value: 
+      objectReference: {fileID: 1369244908}
     - target: {fileID: 1299840295694566832, guid: 1b3a62d5f0064a344a17842f8a4fe806, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
       value: 0.5
@@ -1258,6 +1282,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e42a45652057a4e44857b95998bb1efe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::P2Movement
+--- !u!61 &1819876520 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: -7495667166958028933, guid: 1b3a62d5f0064a344a17842f8a4fe806, type: 3}
+  m_PrefabInstance: {fileID: 308325504}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1819876521 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7194463449726641007, guid: 1b3a62d5f0064a344a17842f8a4fe806, type: 3}
+  m_PrefabInstance: {fileID: 308325504}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2030094439
 GameObject:
   m_ObjectHideFlags: 0
@@ -1579,6 +1613,10 @@ PrefabInstance:
     - target: {fileID: 5451133027031022542, guid: 520f60f441a60e34688d9acf7257ed2e, type: 3}
       propertyPath: m_Name
       value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 5451133027031022542, guid: 520f60f441a60e34688d9acf7257ed2e, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6609241308033549778, guid: 520f60f441a60e34688d9acf7257ed2e, type: 3}
       propertyPath: m_LocalPosition.x
