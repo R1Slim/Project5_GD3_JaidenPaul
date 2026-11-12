@@ -40,17 +40,23 @@ public class PlayerMovement : MonoBehaviour
         {
             EasedDirectionwasd();
             RaycastAngle(PlayerRb.linearVelocity);
+            if (GM.Shootout && Input.GetKeyDown(KeyCode.LeftShift))
+            {
+            
+                shoot(transform);
+            }
         }
         if (PlayerCol.name == "P2")
         {
             EasedDirectionArrows();
             RaycastAngle(PlayerRb.linearVelocity);
+            if(GM.Shootout && Input.GetKeyDown(KeyCode.RightShift))
+            {
+                shoot(transform);
+            }
         }
-        if (GM.Shootout && Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
-        {
-            
-            shoot(transform);
-        }
+        
+        
     }
     void EasedDirectionwasd()
     {
@@ -186,7 +192,7 @@ public class PlayerMovement : MonoBehaviour
     {
         GameObject newBullet = Instantiate(bullet, PlayerTransform.position, Quaternion.identity);
         Rigidbody2D bulletRb = newBullet.GetComponent<Rigidbody2D>();
-        bulletRb.linearVelocity = PlayerTransform.right * bulletSpeed;
+        bulletRb.linearVelocity = PlayerTransform.up * bulletSpeed;
     }
 
 }

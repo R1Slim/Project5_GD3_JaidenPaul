@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -1820375033676792628}
   - component: {fileID: -7495667166958028933}
   - component: {fileID: -3005551643261910199}
+  - component: {fileID: 1157049740172940700}
   m_Layer: 0
   m_Name: P2
   m_TagString: Untagged
@@ -101,7 +102,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19543246393823025}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e42a45652057a4e44857b95998bb1efe, type: 3}
   m_Name: 
@@ -109,10 +110,12 @@ MonoBehaviour:
   p2rb: {fileID: -3005551643261910199}
   p2sr: {fileID: 7194463449726641007}
   p2col: {fileID: -7495667166958028933}
+  flashlight2: {fileID: 0}
   smoothness: 0.075
   speed: 5
   desired: {x: 0, y: 0}
-  isfacingright: 0
+  radius: 6.5
+  LightsOn: 0
 --- !u!61 &-7495667166958028933
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -186,3 +189,33 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1157049740172940700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19543246393823025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e40c9e49a772c4e8dfc302cbf16c63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  PlayerRb: {fileID: -3005551643261910199}
+  PlayerSr: {fileID: 0}
+  PlayerCol: {fileID: 0}
+  flashlight: {fileID: 0}
+  smoothness: 0.075
+  speed: 5
+  desired: {x: 0, y: 0}
+  isfacingright: 0
+  radius: 6.5
+  LightsOn: 0
+  Player2: {fileID: 0}
+  GM: {fileID: 0}
+  bullet: {fileID: 0}
+  PlayerTransform: {fileID: 0}
+  bulletSpeed: 10
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
