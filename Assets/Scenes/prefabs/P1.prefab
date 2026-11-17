@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8531309372249729052}
   - component: {fileID: 5703752218581991579}
-  - component: {fileID: 2836597504830292658}
   - component: {fileID: -3657435643704128247}
   - component: {fileID: 8693469286649292632}
   m_Layer: 0
@@ -94,28 +93,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &2836597504830292658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5502081210111904664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92208843d359d974cb6fd99a8c155346, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::P1Movement
-  p1rb: {fileID: 0}
-  p1sr: {fileID: 5703752218581991579}
-  p1col: {fileID: 8693469286649292632}
-  flashlight: {fileID: 0}
-  smoothness: 0.075
-  speed: 5
-  desired: {x: 0, y: 0}
-  isfacingright: 0
-  radius: 6.5
-  LightsOn: 0
 --- !u!50 &-3657435643704128247
 Rigidbody2D:
   serializedVersion: 5
